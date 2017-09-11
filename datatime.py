@@ -55,7 +55,7 @@ def CreateRecord (num_years):
     return(record)
 
 def main():
-    NUM_RECORDS = 5
+    NUM_RECORDS = 100000
     YEAR_RANGE = -10
     FILE_NAME = 'sample_date.csv'
     
@@ -69,6 +69,8 @@ def main():
         row += '\n'
         f.write(row)
     f.close()
+    
+    print(str(NUM_RECORDS) + ' records written to ' + FILE_NAME)
     
 if __name__ == '__main__':
     main()
