@@ -50,7 +50,8 @@ def CreateRecord (num_years):
      
     record.append(record_datetime.strftime('%Y%m'))
     record.append(record_datetime.strftime('%d-%b-%Y'))
-    record.append(record_datetime.isoformat())
+    # Hive does not handle the default separator of 'T'
+    record.append(record_datetime.isoformat(sep = ' '))
     
     return(record)
 
