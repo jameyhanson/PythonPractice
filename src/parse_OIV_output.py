@@ -6,6 +6,19 @@ Created on Sep 14, 2017
 ref: https://docs.python.org/3.6/library/xml.etree.elementtree.html
 
 root.tag (inode | directory)
+ignore all other root tags
+
+directory root
+    parentID and (0 to many) child IDs
+    output_opt1:
+        parentID1, childID1
+        parentID1, childID2
+        parentID2, childID1
+    output_opt2:
+        {parentID1:[childID1, childID2]}
+        {parentID2:[chileID2]}
+inode root
+    ID and attributes (type, name, 
 
 '''
 
@@ -56,7 +69,7 @@ def shred_line(line):
 def main():
     
     line = '<inode><id>16432</id><type>FILE</type><name>apache-log4j-extras-1.2.17.jar</name><replication>3</replication><mtime>1504280150137</mtime><atime>1504280149965</atime><preferredBlockSize>134217728</preferredBlockSize><permission>oozie:oozie:0775</permission><blocks><block><id>1073741834</id><genstamp>1010</genstamp><numBytes>448794</numBytes></block></blocks><storagePolicyId>0</storagePolicyId></inode>'
-#     line = '<directory><parent>16390</parent><child>16392</child><child>16393</child></directory>'
+#    line = '<directory><parent>16390</parent><child>16392</child><child>16393</child></directory>'
 #     line = '<INodeDirectorySection><directory><parent>16385</parent><child>17451</child><child>16386</child><child>16389</child></directory>'
 #     line = '</INodeDirectorySection>'
 #     line = '<FileUnderConstructionSection></FileUnderConstructionSection>'
